@@ -1,23 +1,38 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 import { Card } from '@/components/atoms/Card';
 import { Modal } from '@/components/atoms/Modal';
 import { SectionHeading } from '@/components/atoms/SectionHeading';
 import { ProjectCard } from '@/components/molecules/ProjectCard';
 import { portfolioData } from '@/data/portfolioData';
+import { fadeUp, staggerContainer } from '@/utils/motion';
 
 export const ProjectsSection = () => {
   const [activeProject, setActiveProject] = useState<(typeof portfolioData.projects)[number] | null>(null);
 
   return (
-    <section id="projects" className="section-spacing">
+    <motion.section
+      id="projects"
+      className="section-spacing"
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <SectionHeading
         eyebrow="Projects"
         title="Featured product experiences"
         description="Case-study-style projects blending visual polish, UX decisions, and scalable code."
       />
 
-      <div className="grid gap-5 lg:grid-cols-3">
+      <motion.div
+        className="grid gap-5 lg:grid-cols-3"
+        variants={staggerContainer(0.08, 0.05)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {portfolioData.projects.map((project) => (
           <ProjectCard
             key={project.title}
@@ -27,7 +42,7 @@ export const ProjectsSection = () => {
             }}
           />
         ))}
-      </div>
+      </motion.div>
 
       <Modal
         open={Boolean(activeProject)}
@@ -51,6 +66,6 @@ export const ProjectsSection = () => {
           </Card>
         ) : null}
       </Modal>
-    </section>
+    </motion.section>
   );
 };

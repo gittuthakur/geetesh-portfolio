@@ -1,17 +1,34 @@
+import { motion } from 'framer-motion';
+
 import { Card } from '@/components/atoms/Card';
 import { SectionHeading } from '@/components/atoms/SectionHeading';
 import { ContactForm } from '@/features/contact/ContactForm';
 import { portfolioData } from '@/data/portfolioData';
+import { fadeUp, staggerContainer } from '@/utils/motion';
 
 export const ContactSection = () => (
-  <section id="contact" className="section-spacing">
+  <motion.section
+    id="contact"
+    className="section-spacing"
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}
+  >
     <SectionHeading
       eyebrow="Contact"
       title="Let&apos;s build something outstanding"
       description="Share your goals, constraints, and timelines. I will reply with a practical plan."
     />
 
-    <div className="grid gap-4 lg:grid-cols-[0.7fr_1.3fr]">
+    <motion.div
+      className="grid gap-4 lg:grid-cols-[0.7fr_1.3fr]"
+      variants={staggerContainer(0.12, 0.05)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <motion.div variants={fadeUp}>
       <Card>
         <p className="text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400">Email</p>
         <a
@@ -39,9 +56,12 @@ export const ContactSection = () => (
           linkedin.com/in/geeta-ram-5220512a
         </a>
       </Card>
+      </motion.div>
+      <motion.div variants={fadeUp}>
       <Card>
         <ContactForm />
       </Card>
-    </div>
-  </section>
+      </motion.div>
+    </motion.div>
+  </motion.section>
 );

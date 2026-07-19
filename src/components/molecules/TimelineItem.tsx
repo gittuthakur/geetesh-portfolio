@@ -1,4 +1,7 @@
+import { motion } from 'framer-motion';
+
 import { Card } from '@/components/atoms/Card';
+import { fadeUp } from '@/utils/motion';
 
 interface TimelineItemProps {
   role: string;
@@ -15,10 +18,17 @@ export const TimelineItem = ({
   location,
   achievements
 }: TimelineItemProps) => (
-  <article className="relative pl-8">
+  <motion.article
+    className="relative pl-8"
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.25 }}
+  >
     <span className="absolute left-0 top-6 h-3 w-3 rounded-full bg-brand-500 ring-4 ring-brand-500/20 dark:bg-brand-400 dark:ring-brand-400/20" />
     <span className="absolute left-[5px] top-10 h-[calc(100%-0.5rem)] w-px bg-slate-300 dark:bg-slate-700" />
-    <Card className="mb-6">
+    <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.22 }}>
+      <Card className="mb-6">
       <header className="mb-3 flex flex-wrap items-center justify-between gap-3">
         <div>
           <h3 className="font-display text-xl text-slate-950 dark:text-white">{role}</h3>
@@ -37,6 +47,7 @@ export const TimelineItem = ({
           </li>
         ))}
       </ul>
-    </Card>
-  </article>
+      </Card>
+    </motion.div>
+  </motion.article>
 );

@@ -5,8 +5,12 @@ import { Card } from '@/components/atoms/Card';
 import { portfolioData } from '@/data/portfolioData';
 
 export const HeroSection = () => (
-  <section id="home" className="relative pt-14 md:pt-20">
-    <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+  <section
+    id="home"
+    className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden border-y border-white/20 bg-gradient-to-br from-brand-500/10 via-indigo-500/10 to-accent-500/10 py-14 backdrop-blur dark:border-white/10"
+  >
+    <div className="mx-auto w-[min(1320px,94vw)]">
+      <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
       <motion.div
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
@@ -17,13 +21,13 @@ export const HeroSection = () => (
         </p>
         <h1 className="font-display text-4xl font-semibold leading-tight text-slate-950 dark:text-white md:text-6xl">
           {portfolioData.role}
-          <span className="mt-2 block bg-gradient-to-r from-brand-500 to-accent-500 bg-clip-text text-transparent">
+          <span className="mt-2 block bg-gradient-to-r from-brand-500 via-indigo-500 to-accent-500 bg-clip-text text-transparent">
             {portfolioData.heroTagline}
           </span>
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 md:text-lg">
+        {/* <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 md:text-lg">
           {portfolioData.heroSummary}
-        </p>
+        </p> */}
 
         <div className="mt-7 flex flex-wrap items-center gap-3">
           <LinkButton href="#projects">View Projects</LinkButton>
@@ -37,7 +41,11 @@ export const HeroSection = () => (
         initial={{ opacity: 0, y: 22 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, delay: 0.12 }}
+        className="space-y-8 lg:pl-4"
       >
+        <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 md:text-lg">
+          {portfolioData.heroSummary}
+        </p>
         <Card className="relative overflow-hidden">
           <div className="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-brand-500/20 blur-2xl" aria-hidden="true" />
           <p className="text-sm uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Location</p>
@@ -56,6 +64,7 @@ export const HeroSection = () => (
           </dl>
         </Card>
       </motion.div>
+      </div>
     </div>
   </section>
 );

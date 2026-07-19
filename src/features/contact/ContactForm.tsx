@@ -1,10 +1,12 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import { Button } from '@/components/atoms/Button';
 import { portfolioData } from '@/data/portfolioData';
 import { useToast } from '@/features/toast/ToastProvider';
+import { fadeUp, staggerContainer } from '@/utils/motion';
 
 const schema = z.object({
   name: z.string().min(2, 'Please enter your name.'),
@@ -50,8 +52,16 @@ export const ContactForm = () => {
   };
 
   return (
-    <form className="space-y-4" noValidate onSubmit={handleSubmit(onSubmit)}>
-      <div>
+    <motion.form
+      className="space-y-4"
+      noValidate
+      onSubmit={handleSubmit(onSubmit)}
+      variants={staggerContainer(0.08, 0.03)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.35 }}
+    >
+      <motion.div variants={fadeUp}>
         <label htmlFor="name" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
           Name
         </label>
@@ -62,9 +72,9 @@ export const ContactForm = () => {
           {...register('name')}
         />
         {errors.name ? <p className="mt-1 text-xs text-rose-500">{errors.name.message}</p> : null}
-      </div>
+      </motion.div>
 
-      <div>
+      <motion.div variants={fadeUp}>
         <label htmlFor="email" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
           Email
         </label>
@@ -75,9 +85,9 @@ export const ContactForm = () => {
           {...register('email')}
         />
         {errors.email ? <p className="mt-1 text-xs text-rose-500">{errors.email.message}</p> : null}
-      </div>
+      </motion.div>
 
-      <div>
+      <motion.div variants={fadeUp}>
         <label htmlFor="company" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
           Company
         </label>
@@ -88,9 +98,9 @@ export const ContactForm = () => {
           {...register('company')}
         />
         {errors.company ? <p className="mt-1 text-xs text-rose-500">{errors.company.message}</p> : null}
-      </div>
+      </motion.div>
 
-      <div>
+      <motion.div variants={fadeUp}>
         <label htmlFor="subject" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
           Subject
         </label>
@@ -101,9 +111,9 @@ export const ContactForm = () => {
           {...register('subject')}
         />
         {errors.subject ? <p className="mt-1 text-xs text-rose-500">{errors.subject.message}</p> : null}
-      </div>
+      </motion.div>
 
-      <div>
+      <motion.div variants={fadeUp}>
         <label
           htmlFor="message"
           className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300"
@@ -117,11 +127,13 @@ export const ContactForm = () => {
           {...register('message')}
         />
         {errors.message ? <p className="mt-1 text-xs text-rose-500">{errors.message.message}</p> : null}
-      </div>
+      </motion.div>
 
-      <Button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? 'Preparing...' : 'Contact Me'}
-      </Button>
-    </form>
+      <motion.div variants={fadeUp} whileHover={{ y: -2 }}>
+        <Button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Preparing...' : 'Contact Me'}
+        </Button>
+      </motion.div>
+    </motion.form>
   );
 };

@@ -19,8 +19,8 @@ module.exports = {
           600: '#1d58cd'
         },
         accent: {
-          400: '#14b8a6',
-          500: '#0891b2'
+          400: '#8b5cf6',
+          500: '#7c3aed'
         }
       },
       boxShadow: {
@@ -31,7 +31,7 @@ module.exports = {
         xs: '2px'
       },
       backgroundImage: {
-        'hero-gradient': 'radial-gradient(80rem 50rem at 15% -10%, rgba(39,115,255,0.22), transparent), radial-gradient(75rem 50rem at 90% 10%, rgba(20,184,166,0.18), transparent)'
+        'hero-gradient': 'radial-gradient(80rem 50rem at 15% -10%, rgba(39,115,255,0.24), transparent), radial-gradient(75rem 50rem at 90% 10%, rgba(124,58,237,0.2), transparent)'
       }
     }
   },

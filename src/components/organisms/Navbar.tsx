@@ -1,30 +1,44 @@
 import { FiMoon, FiSun } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 
 import { LinkButton } from '@/components/atoms/Button';
 import { portfolioData } from '@/data/portfolioData';
 import { useTheme } from '@/features/theme/ThemeProvider';
+import { fadeUp, staggerContainer } from '@/utils/motion';
 
 export const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/20 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/65">
-      <div className="mx-auto flex h-16 w-[min(1100px,92vw)] items-center justify-between gap-3">
+    <motion.header
+      className="sticky top-0 z-40 border-b border-white/20 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/65"
+      variants={fadeUp}
+      initial="hidden"
+      animate="visible"
+    >
+      <div className="mx-auto flex h-16 w-[min(1320px,94vw)] items-center justify-between gap-3">
         <a href="#home" className="font-display text-xl font-semibold tracking-tight text-slate-950 dark:text-white">
           {portfolioData.name}
         </a>
 
-        <nav className="hidden items-center gap-5 md:flex" aria-label="Primary">
+        <motion.nav
+          className="hidden items-center gap-5 md:flex"
+          aria-label="Primary"
+          variants={staggerContainer(0.06, 0.1)}
+          initial="hidden"
+          animate="visible"
+        >
           {portfolioData.navItems.map((item) => (
-            <a
+            <motion.a
               key={item.href}
               href={item.href}
               className="text-sm font-medium text-slate-700 transition hover:text-slate-950 dark:text-slate-300 dark:hover:text-white"
+              variants={fadeUp}
             >
               {item.label}
-            </a>
+            </motion.a>
           ))}
-        </nav>
+        </motion.nav>
 
         <div className="flex items-center gap-2">
           <button
@@ -40,6 +54,6 @@ export const Navbar = () => {
           </LinkButton>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };

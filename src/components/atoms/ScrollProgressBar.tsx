@@ -18,7 +18,7 @@ export const ScrollProgressBar = () => {
   return (
     <motion.div
       style={{ scaleX, transformOrigin: '0%' }}
-      className="fixed left-0 top-0 z-[100] h-1 w-full bg-gradient-to-r from-brand-500 via-cyan-400 to-teal-400"
+      className="fixed left-0 top-0 z-[100] h-1 w-full bg-gradient-to-r from-brand-500 via-indigo-500 to-accent-500"
       aria-hidden="true"
     />
   );

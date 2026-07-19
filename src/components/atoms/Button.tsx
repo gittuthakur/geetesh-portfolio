@@ -15,7 +15,7 @@ const styles = {
   base: 'inline-flex items-center justify-center rounded-xl font-semibold transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent disabled:cursor-not-allowed disabled:opacity-60',
   variant: {
     primary:
-      'bg-brand-500 text-white shadow-soft hover:-translate-y-0.5 hover:bg-brand-600 dark:bg-brand-400 dark:text-slate-950',
+      'bg-gradient-to-r from-brand-500 via-indigo-500 to-accent-500 text-white shadow-soft hover:-translate-y-0.5 hover:brightness-110 dark:text-white',
     secondary:
       'border border-slate-300 bg-white/80 text-slate-900 hover:-translate-y-0.5 hover:bg-white dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100 dark:hover:bg-slate-800',
     ghost:
