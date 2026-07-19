@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiExternalLink } from 'react-icons/fi';
+import { FiExternalLink, FiEye } from 'react-icons/fi';
 
 import { Button } from '@/components/atoms/Button';
 import { Card } from '@/components/atoms/Card';
@@ -37,8 +37,11 @@ export const ProjectCard = ({
         ))}
       </div>
       <div className="mt-6 flex flex-wrap gap-3">
-        <Button variant="secondary" size="sm" onClick={onPreview}>
-          Quick View
+        <Button variant="secondary" size="sm" onClick={onPreview} showIcon={false}>
+          <span className="inline-flex items-center gap-2">
+            Quick View
+            <FiEye className="h-4 w-4" aria-hidden="true" />
+          </span>
         </Button>
         <a
           href={href}
