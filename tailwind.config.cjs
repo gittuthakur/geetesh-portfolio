@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Manrope', 'system-ui', 'sans-serif'],
-        display: ['Sora', 'Manrope', 'sans-serif']
+        sans: ['Poppins', 'Roboto', 'system-ui', 'sans-serif'],
+        display: ['Poppins', 'Roboto', 'system-ui', 'sans-serif']
       },
       colors: {
         canvas: {

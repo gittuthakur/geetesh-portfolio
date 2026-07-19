@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,6 +10,7 @@
 
 html {
   font-size: 120%;
+  scroll-behavior: smooth;
 }
 
 .dark {
@@ -40,6 +41,7 @@ a {
 
 .section-spacing {
   @apply pt-20;
+  scroll-margin-top: 6.25rem;
 }
 
 @media (max-width: 768px) {

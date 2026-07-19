@@ -1,6 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
+import { FiSend } from 'react-icons/fi';
 import { z } from 'zod';
 
 import { Button } from '@/components/atoms/Button';
@@ -41,7 +42,7 @@ export const ContactForm = () => {
       window.setTimeout(resolve, 300);
     });
 
-    const subject = encodeURIComponent(`${values.subject} | ${values.company}`);
+    const subject = encodeURIComponent(values.subject);
     const body = encodeURIComponent(
       `Name: ${values.name}\nEmail: ${values.email}\nCompany: ${values.company}\n\nMessage:\n${values.message}`
     );
@@ -61,56 +62,62 @@ export const ContactForm = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.35 }}
     >
-      <motion.div variants={fadeUp}>
-        <label htmlFor="name" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
-          Name
-        </label>
-        <input
-          id="name"
-          type="text"
-          className="h-11 w-full rounded-xl border border-slate-300 bg-white/90 px-4 text-sm text-slate-900 outline-none ring-brand-400/30 transition focus:ring dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100"
-          {...register('name')}
-        />
-        {errors.name ? <p className="mt-1 text-xs text-rose-500">{errors.name.message}</p> : null}
-      </motion.div>
+      <motion.div className="grid gap-4 md:grid-cols-2" variants={fadeUp}>
+        <motion.div variants={fadeUp}>
+          <label htmlFor="name" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
+            Name
+          </label>
+          <input
+            id="name"
+            type="text"
+            placeholder="Your full name"
+            className="h-11 w-full rounded-xl border border-slate-300 bg-white/90 px-4 text-sm text-slate-900 outline-none ring-brand-400/30 transition focus:ring dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100"
+            {...register('name')}
+          />
+          {errors.name ? <p className="mt-1 text-xs text-rose-500">{errors.name.message}</p> : null}
+        </motion.div>
 
-      <motion.div variants={fadeUp}>
-        <label htmlFor="email" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
-          Email
-        </label>
-        <input
-          id="email"
-          type="email"
-          className="h-11 w-full rounded-xl border border-slate-300 bg-white/90 px-4 text-sm text-slate-900 outline-none ring-brand-400/30 transition focus:ring dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100"
-          {...register('email')}
-        />
-        {errors.email ? <p className="mt-1 text-xs text-rose-500">{errors.email.message}</p> : null}
-      </motion.div>
+        <motion.div variants={fadeUp}>
+          <label htmlFor="email" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
+            Email
+          </label>
+          <input
+            id="email"
+            type="email"
+            placeholder="your.email@example.com"
+            className="h-11 w-full rounded-xl border border-slate-300 bg-white/90 px-4 text-sm text-slate-900 outline-none ring-brand-400/30 transition focus:ring dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100"
+            {...register('email')}
+          />
+          {errors.email ? <p className="mt-1 text-xs text-rose-500">{errors.email.message}</p> : null}
+        </motion.div>
 
-      <motion.div variants={fadeUp}>
-        <label htmlFor="company" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
-          Company
-        </label>
-        <input
-          id="company"
-          type="text"
-          className="h-11 w-full rounded-xl border border-slate-300 bg-white/90 px-4 text-sm text-slate-900 outline-none ring-brand-400/30 transition focus:ring dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100"
-          {...register('company')}
-        />
-        {errors.company ? <p className="mt-1 text-xs text-rose-500">{errors.company.message}</p> : null}
-      </motion.div>
+        <motion.div variants={fadeUp}>
+          <label htmlFor="subject" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
+            Subject
+          </label>
+          <input
+            id="subject"
+            type="text"
+            placeholder="What's this about?"
+            className="h-11 w-full rounded-xl border border-slate-300 bg-white/90 px-4 text-sm text-slate-900 outline-none ring-brand-400/30 transition focus:ring dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100"
+            {...register('subject')}
+          />
+          {errors.subject ? <p className="mt-1 text-xs text-rose-500">{errors.subject.message}</p> : null}
+        </motion.div>
 
-      <motion.div variants={fadeUp}>
-        <label htmlFor="subject" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
-          Subject
-        </label>
-        <input
-          id="subject"
-          type="text"
-          className="h-11 w-full rounded-xl border border-slate-300 bg-white/90 px-4 text-sm text-slate-900 outline-none ring-brand-400/30 transition focus:ring dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100"
-          {...register('subject')}
-        />
-        {errors.subject ? <p className="mt-1 text-xs text-rose-500">{errors.subject.message}</p> : null}
+        <motion.div variants={fadeUp}>
+          <label htmlFor="company" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
+            Company
+          </label>
+          <input
+            id="company"
+            type="text"
+            placeholder="Your company name"
+            className="h-11 w-full rounded-xl border border-slate-300 bg-white/90 px-4 text-sm text-slate-900 outline-none ring-brand-400/30 transition focus:ring dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100"
+            {...register('company')}
+          />
+          {errors.company ? <p className="mt-1 text-xs text-rose-500">{errors.company.message}</p> : null}
+        </motion.div>
       </motion.div>
 
       <motion.div variants={fadeUp}>
@@ -123,6 +130,7 @@ export const ContactForm = () => {
         <textarea
           id="message"
           rows={5}
+          placeholder="Tell me about your project or inquiry..."
           className="w-full rounded-xl border border-slate-300 bg-white/90 px-4 py-3 text-sm text-slate-900 outline-none ring-brand-400/30 transition focus:ring dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100"
           {...register('message')}
         />
@@ -130,10 +138,21 @@ export const ContactForm = () => {
       </motion.div>
 
       <motion.div variants={fadeUp} whileHover={{ y: -2 }}>
-        <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? 'Preparing...' : 'Contact Me'}
+        <Button type="submit" disabled={isSubmitting} showIcon={false} className="h-11 px-5 whitespace-nowrap">
+          {isSubmitting ? (
+            'Preparing...'
+          ) : (
+            <span className="inline-flex items-center gap-2">
+              <FiSend className="h-4 w-4" aria-hidden="true" />
+              Send Message
+            </span>
+          )}
         </Button>
       </motion.div>
+
+      <motion.p variants={fadeUp} className="text-center text-xs text-slate-500 dark:text-slate-400">
+        Usually responds within 24 hours
+      </motion.p>
     </motion.form>
   );
 };

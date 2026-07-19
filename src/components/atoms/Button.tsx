@@ -1,4 +1,5 @@
 import { AnchorHTMLAttributes, ButtonHTMLAttributes, forwardRef } from 'react';
+import { FiArrowUpRight } from 'react-icons/fi';
 
 import { cn } from '@/utils/cn';
 
@@ -6,13 +7,14 @@ type CommonProps = {
   variant?: 'primary' | 'secondary' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
+  showIcon?: boolean;
 };
 
 type ButtonProps = CommonProps & ButtonHTMLAttributes<HTMLButtonElement>;
 type LinkButtonProps = CommonProps & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const styles = {
-  base: 'inline-flex items-center justify-center rounded-xl font-semibold transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent disabled:cursor-not-allowed disabled:opacity-60',
+  base: 'inline-flex items-center justify-center rounded-xl font-semibold transition duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent disabled:cursor-not-allowed disabled:opacity-60',
   variant: {
     primary:
       'bg-gradient-to-r from-brand-500 via-indigo-500 to-accent-500 text-white shadow-soft hover:-translate-y-0.5 hover:brightness-110 dark:text-white',
@@ -29,17 +31,30 @@ const styles = {
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', ...props }, ref) => (
+  ({ className, variant = 'primary', size = 'md', showIcon = true, children, ...props }, ref) => (
     <button
       ref={ref}
       className={cn(styles.base, styles.variant[variant], styles.size[size], className)}
       {...props}
-    />
+    >
+      <span>{children}</span>
+      {showIcon ? <FiArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" /> : null}
+    </button>
   )
 );
 
 Button.displayName = 'Button';
 
-export const LinkButton = ({ className, variant = 'primary', size = 'md', ...props }: LinkButtonProps) => (
-  <a className={cn(styles.base, styles.variant[variant], styles.size[size], className)} {...props} />
+export const LinkButton = ({
+  className,
+  variant = 'primary',
+  size = 'md',
+  showIcon = true,
+  children,
+  ...props
+}: LinkButtonProps) => (
+  <a className={cn(styles.base, styles.variant[variant], styles.size[size], className)} {...props}>
+    <span>{children}</span>
+    {showIcon ? <FiArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" /> : null}
+  </a>
 );

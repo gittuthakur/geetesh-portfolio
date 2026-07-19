@@ -14,7 +14,6 @@ const ServicesSection = lazy(() => import('@/components/organisms/ServicesSectio
 const TestimonialsSection = lazy(() =>
   import('@/components/organisms/TestimonialsSection').then((module) => ({ default: module.TestimonialsSection }))
 );
-const ResumeSection = lazy(() => import('@/components/organisms/ResumeSection').then((module) => ({ default: module.ResumeSection })));
 const ContactSection = lazy(() => import('@/components/organisms/ContactSection').then((module) => ({ default: module.ContactSection })));
 
 export const HomePage = () => (
@@ -35,7 +34,6 @@ export const HomePage = () => (
       <ProjectsSection />
       <ServicesSection />
       <TestimonialsSection />
-      <ResumeSection />
       <ContactSection />
     </PortfolioTemplate>
   </>

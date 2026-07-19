@@ -11,7 +11,7 @@ export const Navbar = () => {
 
   return (
     <motion.header
-      className="sticky top-0 z-40 border-b border-white/20 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/65"
+      className="fixed left-0 right-0 top-0 z-50 border-b border-white/20 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/65"
       variants={fadeUp}
       initial="hidden"
       animate="visible"
@@ -49,7 +49,7 @@ export const Navbar = () => {
           >
             {theme === 'light' ? <FiMoon /> : <FiSun />}
           </button>
-          <LinkButton href="#contact" size="sm" className="h-10 px-4">
+          <LinkButton href="#contact" size="sm" className="h-10 px-4" showIcon={false}>
             Let&apos;s Talk
           </LinkButton>
         </div>
