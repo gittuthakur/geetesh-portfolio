@@ -1,0 +1,145 @@
+{
+  "brand": "Geetesh.",
+  "name": "Geetesh",
+  "role": "UI/UX and Front-End Developer",
+  "tagline": "Crafting modern web experiences with strong visual hierarchy, responsive engineering, and conversion-focused UX.",
+  "summary": "Front-end and product-focused developer with experience in designing, building, and shipping portfolio websites, dashboards, and marketing experiences. I specialize in React, UI systems, and user-centered visual design.",
+  "availability": "Available for work",
+  "resumeUrl": "https://example.com/geetesh-cv.pdf",
+  "achievement": {
+    "title": "Top Performer - Frontend Bootcamp 2026",
+    "subtitle": "Modern Web Development Track",
+    "meta": "Credential: GT-WEB-2026-1482",
+    "metrics": [
+      { "value": "12,000+", "label": "Learners" },
+      { "value": "250", "label": "Finalists" },
+      { "value": "Top 1%", "label": "Rank" }
+    ]
+  },
+  "socials": [
+    { "name": "GitHub", "url": "https://github.com/" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/" },
+    { "name": "Behance", "url": "https://www.behance.net/" },
+    { "name": "Email", "url": "mailto:geetesh@example.com" }
+  ],
+  "stats": [
+    { "value": "5+", "label": "Years Experience" },
+    { "value": "30+", "label": "Projects Delivered" },
+    { "value": "14", "label": "Product Launches" },
+    { "value": "India", "label": "Location" }
+  ],
+  "about": {
+    "text": "I design interfaces with product goals in mind, then build them in code with clean architecture and performance-aware implementation. My process blends UX research, wireframing, component-driven design, and production-quality React development.",
+    "highlights": [
+      { "value": "30+", "label": "Real Projects Built" },
+      { "value": "5+ Years", "label": "Experience" },
+      { "value": "14", "label": "Certifications" },
+      { "value": "Remote", "label": "Work Mode" }
+    ]
+  },
+  "experienceLead": "Professional journey building and shipping high-impact digital products",
+  "experience": [
+    {
+      "title": "Senior UI/UX Designer",
+      "company": "Pixel Forge Studio",
+      "location": "Remote",
+      "period": "2023 - Present",
+      "points": [
+        "Led end-to-end UX for B2B SaaS dashboards and improved workflow completion by 24%",
+        "Built design system foundations with reusable components and design tokens",
+        "Collaborated with engineering teams to convert prototypes into production React interfaces"
+      ]
+    },
+    {
+      "title": "Front-End Developer",
+      "company": "Nova Digital",
+      "location": "India",
+      "period": "2020 - 2023",
+      "points": [
+        "Developed reusable component libraries that reduced frontend build time",
+        "Implemented responsive marketing pages and web apps with strong Lighthouse metrics",
+        "Partnered with designers to ensure pixel-accurate UI and accessibility compliance"
+      ]
+    }
+  ],
+  "skillsLead": "Technologies and tools I use to bring ideas to life",
+  "skillGroups": [
+    {
+      "title": "Frontend Core",
+      "items": ["React", "JavaScript", "TypeScript", "HTML5", "CSS3", "Vite", "Next.js"]
+    },
+    {
+      "title": "UI and Styling",
+      "items": ["Figma", "Design Systems", "Framer Motion", "Tailwind CSS", "SCSS", "Accessibility"]
+    },
+    {
+      "title": "Backend and Integration",
+      "items": ["Node.js", "Express", "REST APIs", "Firebase", "PostgreSQL", "MongoDB"]
+    },
+    {
+      "title": "Productivity and Tools",
+      "items": ["GitHub", "Git", "VS Code", "Postman", "Vercel", "AI-assisted workflows"]
+    }
+  ],
+  "projectLead": "A showcase of product design and engineering work",
+  "projects": [
+    {
+      "category": "Web App Projects",
+      "items": [
+        {
+          "name": "Fintrack Dashboard",
+          "summary": "Data-heavy finance dashboard with role-based analytics, custom filters, and accessibility-first chart UX.",
+          "stack": ["React", "TypeScript", "Node.js", "PostgreSQL"],
+          "featured": true,
+          "link": "https://example.com/fintrack"
+        },
+        {
+          "name": "EduFlow Portal",
+          "summary": "Learning management platform focused on course lifecycle, student progress, and instructor analytics.",
+          "stack": ["React", "Express", "MongoDB", "Charts"],
+          "featured": false,
+          "link": "https://example.com/eduflow"
+        }
+      ]
+    },
+    {
+      "category": "Creative and Marketing",
+      "items": [
+        {
+          "name": "Travel Atlas",
+          "summary": "Conversion-focused travel booking experience redesigned for mobile with improved checkout completion.",
+          "stack": ["React", "UI/UX", "A/B Testing", "Analytics"],
+          "featured": true,
+          "link": "https://example.com/travel-atlas"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Tech in Computer Science",
+      "institute": "Example Institute of Technology",
+      "year": "2016 - 2020",
+      "details": "Focused on software engineering, HCI, and web architecture."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Advanced React Development",
+      "issuer": "Frontend Masters",
+      "year": "2025",
+      "credentialUrl": "https://example.com/cert/react"
+    },
+    {
+      "name": "Google UX Design",
+      "issuer": "Coursera",
+      "year": "2024",
+      "credentialUrl": "https://example.com/cert/ux"
+    }
+  ],
+  "contact": {
+    "email": "geetesh@example.com",
+    "location": "India",
+    "message": "Open to freelance, full-time, and product collaboration opportunities."
+  }
+}

@@ -1,0 +1,1 @@
+import{j as o,p as t}from"./index-CZb8AUe0.js";import{S as i}from"./SectionHeading-BGdtVsXP.js";const s=()=>o.jsx("section",{id:"about",className:"section-spacing",children:o.jsx(i,{eyebrow:"About",title:"Bridging product thinking and frontend excellence",description:t.about})});export{s as AboutSection};
