@@ -1,6 +1,6 @@
 import { FiMoon, FiSun } from 'react-icons/fi';
 
-import { Button } from '@/components/atoms/Button';
+import { LinkButton } from '@/components/atoms/Button';
 import { portfolioData } from '@/data/portfolioData';
 import { useTheme } from '@/features/theme/ThemeProvider';
 
@@ -35,9 +35,9 @@ export const Navbar = () => {
           >
             {theme === 'light' ? <FiMoon /> : <FiSun />}
           </button>
-          <Button className="hidden md:inline-flex">
+          <LinkButton href="#contact" size="sm" className="h-10 px-4">
             Let&apos;s Talk
-          </Button>
+          </LinkButton>
         </div>
       </div>
     </header>

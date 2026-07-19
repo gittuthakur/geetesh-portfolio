@@ -20,6 +20,24 @@ export const ContactSection = () => (
         >
           {portfolioData.email}
         </a>
+        <p className="mt-4 text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400">Phone</p>
+        <a
+          href={`tel:${portfolioData.phone.replace(/\s+/g, '')}`}
+          className="mt-2 inline-flex text-base font-semibold text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300"
+        >
+          {portfolioData.phone}
+        </a>
+        <p className="mt-4 text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400">Location</p>
+        <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">{portfolioData.location}</p>
+        <p className="mt-4 text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400">LinkedIn</p>
+        <a
+          href={portfolioData.linkedinUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-2 inline-flex text-sm font-semibold text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300"
+        >
+          linkedin.com/in/geeta-ram-5220512a
+        </a>
       </Card>
       <Card>
         <ContactForm />

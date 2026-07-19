@@ -48,6 +48,7 @@ export interface PortfolioData {
   role: string;
   years: string;
   location: string;
+  phone: string;
   heroTagline: string;
   heroSummary: string;
   about: string;
@@ -59,5 +60,6 @@ export interface PortfolioData {
   services: ServiceItem[];
   testimonials: TestimonialItem[];
   resumeUrl: string;
+  linkedinUrl: string;
   email: string;
 }

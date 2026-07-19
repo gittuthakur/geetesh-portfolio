@@ -7,15 +7,13 @@ export const ResumeSection = () => (
   <section className="section-spacing" aria-label="Resume">
     <SectionHeading
       eyebrow="Resume"
-      title="Download full profile"
-      description="A concise PDF with selected achievements, domain expertise, and project highlights."
+      title="Download resume"
+      description="Download the latest resume directly from this portfolio."
     />
 
     <Card className="flex flex-wrap items-center justify-between gap-3">
-      <p className="text-sm text-slate-600 dark:text-slate-300">
-        Prefer an offline copy? Download the latest resume version.
-      </p>
-      <LinkButton href={portfolioData.resumeUrl} target="_blank" rel="noreferrer">
+      <p className="text-sm text-slate-600 dark:text-slate-300">Click below to download my latest resume.</p>
+      <LinkButton href={portfolioData.resumeUrl} download>
         Download Resume
       </LinkButton>
     </Card>

@@ -20,10 +20,10 @@ const ContactSection = lazy(() => import('@/components/organisms/ContactSection'
 export const HomePage = () => (
   <>
     <Helmet>
-      <title>Geetesh Ram | Senior UI Developer Portfolio</title>
+      <title>Geeta Ram | Senior Front-End Developer Portfolio</title>
       <meta
         name="description"
-        content="Premium personal portfolio of a Senior UI Developer with 14+ years of experience in design systems, UI architecture, and frontend engineering."
+        content="Senior Front-End Developer and UI/UX Designer with 14+ years of experience building scalable, accessible, high-performance web applications and design systems."
       />
     </Helmet>
 
