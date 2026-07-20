@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { Card } from '@/components/atoms/Card';
@@ -10,13 +10,31 @@ import { fadeUp, staggerContainer } from '@/utils/motion';
 
 export const ProjectsSection = () => {
   const [activeProject, setActiveProject] = useState<(typeof portfolioData.projects)[number] | null>(null);
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== 'undefined' ? window.matchMedia('(max-width: 767px)').matches : false
+  );
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    const updateMatch = () => setIsMobile(mediaQuery.matches);
+
+    updateMatch();
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', updateMatch);
+      return () => mediaQuery.removeEventListener('change', updateMatch);
+    }
+
+    mediaQuery.addListener(updateMatch);
+    return () => mediaQuery.removeListener(updateMatch);
+  }, []);
 
   return (
     <motion.section
       id="projects"
       className="section-spacing"
       variants={fadeUp}
-      initial="hidden"
+      initial={isMobile ? 'visible' : 'hidden'}
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
@@ -29,7 +47,7 @@ export const ProjectsSection = () => {
       <motion.div
         className="grid gap-5 lg:grid-cols-3"
         variants={staggerContainer(0.08, 0.05)}
-        initial="hidden"
+        initial={isMobile ? 'visible' : 'hidden'}
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
